@@ -2,6 +2,7 @@ __author__ = 'David McInnis'
 
 
 
-import skimage as sk
-
+from skimage import data as skdata
+from skimage import io as skio
+from skimage import filters as skfilters
 
