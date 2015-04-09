@@ -1,11 +1,12 @@
 __author__ = 'David McInnis'
 
 
-
-
 import skimage.io as skio
-from skimage import filters as skfilters
 
-image = skio.imread('i1.jpg')
+image = skio.imread('i1.jpg') #http://images.metmuseum.org/CRDImages/as/original/DP118649_CRD.jpg
+
+
+
 
 skio.imshow(image)
+skio.show()
