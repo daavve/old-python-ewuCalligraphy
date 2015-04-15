@@ -1,8 +1,5 @@
 __author__ = 'David McInnis'
 
-
-
-import numpy as np
 import matplotlib.pyplot as plt
 from scipy import ndimage
 
@@ -25,15 +22,6 @@ for i, a in enumerate([LL, LH, HL, HH]):
 
 fig.suptitle("dwt2 coefficients", fontsize=14)
 
-# Now reconstruct and plot the original image
-reconstructed = pywt.idwt2(coeffs2, 'bior1.3')
-fig = plt.figure()
-plt.imshow(reconstructed, interpolation="nearest", cmap=plt.cm.gray)
-
-# Check that reconstructed image is close to the original
-# np.testing.assert_allclose(original, reconstructed, atol=1e-13, rtol=1e-13)
-
-
 # Now do the same with dwtn/idwtn, to show the difference in their signatures
 
 coeffsn = pywt.dwtn(original, 'bior1.3')
@@ -44,14 +32,6 @@ for i, key in enumerate(['aa', 'ad', 'da', 'dd']):
     ax.set_title(titles[i], fontsize=12)
 
 fig.suptitle("dwtn coefficients", fontsize=14)
-
-# Now reconstruct and plot the original image
-reconstructed = pywt.idwtn(coeffsn, 'bior1.3')
-fig = plt.figure()
-plt.imshow(reconstructed, interpolation="nearest", cmap=plt.cm.gray)
-
-# Check that reconstructed image is close to the original
-# np.testing.assert_allclose(original, reconstructed, atol=1e-13, rtol=1e-13)
 
 
 plt.show()
