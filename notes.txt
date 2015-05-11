@@ -1,0 +1,7 @@
+Wikipedia images are compressed using JPEG with quality varying between 94(14.jpg) & 69(3.jpg)
+
+Resolution(PixelsPerInch) varies between:  72x72(12.jpg) & 300x300(13.jpg)
+
+Rendering Intent for all Wikipedia images is Perceptual, Depth is 8-bit, and all images are sRGB, Even grayscale images
+
+For these images compression artifacts seem most prominent when low resolution is combined with high compression.
