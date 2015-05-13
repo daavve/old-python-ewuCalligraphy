@@ -7,18 +7,22 @@ import pywt
 
 
 # Load image
-original = ndimage.imread('2.jpg', mode='L')
+original = ndimage.imread('1.jpg', mode='L')
 
 waveList = pywt.wavelist()
+fileCount = 0
 for a in waveList:
     wavelet = pywt.Wavelet(a)
     LL, (LH, HL, HH) = pywt.dwt2(original, a, mode='sym')
     fig = plt.figure()
-    for ii in range(1,7):
-        ax = fig.add_subplot(2, 3, ii)
+    for i in range(1,7):
+        ax = fig.add_subplot(2, 3, i)
         ax.imshow(LL, origin='image', interpolation="nearest", cmap=plt.cm.gray)
         LL, (LH, HL, HH) = pywt.dwt2(LL, a, mode='sym')
-    plt.show()
+    saveStr = 'w' + str(fileCount) + '.png'
+    plt.savefig(saveStr)
+    plt.close()
+    fileCount += 1
 
 
 
